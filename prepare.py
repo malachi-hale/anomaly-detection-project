@@ -52,7 +52,10 @@ def to_datetime(df):
 def prepare_data(df):
     '''
     This function calls our previous three functions to clean our data.
+    We also drop staff data as well as pages with just images and the hompeage.
     '''
+    
+    
     #Handle missing values
     df = handle_missing_values(df)
 
@@ -61,5 +64,14 @@ def prepare_data(df):
 
     #Reset Index and change columns to datetime
     df = to_datetime(df)
+    
+    #Drop the Staff Data
+    df = df[df.cohort_id != 28.0]
+    
+    #Drop images as well as the homepage
+    df = df[~df.path.str.endswith('jpg', na = False)]
+    df = df[~df.path.str.endswith('jpeg', na = False)]
+    df = df[~df.path.str.endswith('svg', na = False)]
+    df = df[(df.path != '/') & (df.path != 'search/search_index.json')]
 
     return df
