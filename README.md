@@ -78,7 +78,7 @@ For Program 3, the most frequently accessed page is `Classification Overview`, w
 
 #### Question 2
 **Program 1**
-- Cohort 6 was more likely to visit `javascript-ii/es6` than other cohorts. 
+- Cohort 6 was more likely to visit "javascript-ii/es6" than other cohorts. 
 
 - Cohort 2 was more likely to visit some of the php lessons that the other cohorts. 
 
